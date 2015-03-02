@@ -50,7 +50,16 @@ classdef ant_base
             %integration parameter
             obj.ni.abs = 1e-6;          %absolue tolerance
             obj.ni.rel = 1e-6;          %relative tolerance
-         end
+        end
+         
+        function obj = initialization(obj)
+            obj.IC = [0 1e-2 2e-3 0];      %[m m/s m m/s]
+            obj.data.state = obj.IC;
+        end
+        
+        function obj = ant_single_support(obj)
+            
+        end
     end
     
 end
